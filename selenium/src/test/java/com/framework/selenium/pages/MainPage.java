@@ -2,6 +2,7 @@ package com.framework.selenium.pages;
 
 import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -19,13 +20,12 @@ public class MainPage extends BasePage {
     private WebDriver webDriver;
 
 
-//    @Value("${app.url}")
-//    private String appUrl;
+    @Value("${app.url}")
+    private String appUrl;
 
     public void performLogin() {
-
-        // webDriver.navigate().to(appUrl);
-        //  System.out.println("Login" + appUrl);
-        webDriver.navigate().to("http://eaapp.somee.com");
+         webDriver.navigate().to(appUrl);
+          System.out.println("Login" + appUrl);
+       // webDriver.navigate().to("http://eaapp.somee.com");
     }
 }
